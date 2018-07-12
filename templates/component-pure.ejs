@@ -1,0 +1,17 @@
+import * as React from "react";
+import { Text, View } from "react-native";
+import styles from "./<%= props.name %>Style";
+
+interface Props {
+}
+
+class <%= props.name %> extends React.PureComponent<Props> {
+  public render() {
+    return (
+      <View style={styles.container}>
+        <Text>Pure Component</Text>
+      </View>
+    );
+  }
+}
+export default <%= props.name %>;
