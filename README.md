@@ -1,10 +1,10 @@
-# My Plugin
+# Ignite Typescript Boilerplate for React Native
 
-This is where you would put an intro to your plugin, and maybe a few examples of usage. 
+Use ignite cli to develop your new React Native app using Typescript
 
-## Example
+## Quick Start
 
-```js
-console.log("Hello World")
+```
+ignite new MyAwesomeProject --b ignite-linnify-boilerplate
 ```
 
