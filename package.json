@@ -1,12 +1,12 @@
 {
   "name": "ignite-linnify-boilerplate",
-  "description": "A description of your plugin.",
+  "description": "Ignite Typescript boilerplate used by Linnify Agency",
   "version": "0.0.1",
   "license": "MIT",
   "author": {
     "name": "Razvan Bretoiu",
     "email": "razvanbretoiu@linnify.com",
-    "url": "https://linnify.com"
+    "url": "https://www.linnify.com"
   },
   "scripts": {
     "lint": "standard",
@@ -18,8 +18,10 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "url": "https://example.com/path/to/your/plugin",
-  "repository": "githuborg/reponame",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/razvanbretoiu/ignite-linnify-boilerplate.git"
+  },
   "dependencies": {
     "ramda": "^0.23.0"
   },
