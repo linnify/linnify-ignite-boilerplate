@@ -250,8 +250,6 @@ async function install (context) {
       react-native run-android${androidInfo}
       ignite --help
 
-    ${gray('Read the walkthrough at https://github.com/aerian-studios/ignite-typescript-boilerplate/blob/master/readme.md#boilerplate-walkthrough')}
-
     ${bold('Now get cooking! 🍽')}
   `
   
