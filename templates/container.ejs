@@ -2,9 +2,8 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { connect } from "react-redux";
 import * as Redux from "redux";
-import { RootState } from "../../Reducers";
+import * as Types from 'Types';
 import { Images } from "../../Themes";
-import Metrics from "../../Themes/Metrics";
 
 // Styles
 import styles from "./<%= props.name %>Style";
@@ -53,11 +52,11 @@ class <%= props.name %> extends
   }
 }
 
-const mapDispatchToProps = (dispatch: Redux.Dispatch<RootState>): DispatchProps => ({
-  
+const mapDispatchToProps = (dispatch: Redux.Dispatch<Types.RootState>): DispatchProps => ({
+
 });
 
-const mapStateToProps = (state: RootState, ownProps: OwnProps): StateProps => {
+const mapStateToProps = (state: Types.RootState, ownProps: OwnProps): StateProps => {
   return {};
 };
 
