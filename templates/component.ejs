@@ -3,11 +3,9 @@ import { Text, View } from "react-native";
 import styles from "./<%= props.name %>Style";
 
 interface Props {
-  someProperty: string;
-  anotherProperty: boolean;
 }
 
-const <%= props.name %>: React.SFC<Props> = ({someProperty, anotherProperty}: Props) =>  (
+const <%= props.name %>: React.SFC<Props> = (props: Props) =>  (
   <View style={styles.container}>
     <Text><%= props.name %> Component</Text>
   </View>

@@ -1,15 +1,22 @@
 {
-    "extends": [
-        "tslint:latest", "tslint-react"
-    ],
+    "extends": ["tslint", "tslint-react"],
+    "rulesDirectory": ["node_modules/tslint-lines-between-class-members"],
+    "linterOptions": {
+        "exclude": ["src/navigation/**.tsx", "**/**.js"]
+    },
     "rules": {
         "interface-name": false,
         "object-literal-sort-keys": false,
         "no-object-literal-type-assertion": false,
         "no-empty-interface": false,
         "no-submodule-imports": false,
-        "quotemark": false,
+        "no-console": false,
+        "quotemark": [true, "single"],
         "ordered-imports": false,
-        "no-implicit-dependencies": false
+        "no-implicit-dependencies": false,
+        "member-access": false,
+        "no-var-requires": false,
+        "jsx-no-lambda": true,
+        "lines-between-class-members": true
     }
 }

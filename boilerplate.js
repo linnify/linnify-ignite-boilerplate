@@ -42,10 +42,10 @@ async function install (context) {
   const name = parameters.third
   const logo = red(`
 
-           LINNIFY
+           LINNIFY Digital Agency
 
 `) + green(`
-    🌳   Crafted with care from Linnify.  🌳`) + yellow(`
+     This is the Linnify Boilerplate for React Native apps.`) + yellow(`
 
                 https://linnify.com/
 
@@ -69,7 +69,7 @@ async function install (context) {
   // copy our App, Tests & storybook directories
   spinner.text = '▸ copying files'
   spinner.start()
-  filesystem.copy(`${ignite.ignitePluginPath()}/boilerplate/App`, `${process.cwd()}/App`, {
+  filesystem.copy(`${ignite.ignitePluginPath()}/boilerplate/src`, `${process.cwd()}/src`, {
     overwrite: true,
     matching: '!*.ejs'
   })
@@ -94,7 +94,9 @@ async function install (context) {
   } else if (parameters.options.min) {
     answers = options.answers.min
   } else {
-    answers = await prompt.ask(options.questions)
+    //TODO Create Linnify Plugins
+    // answers = await prompt.ask(options.questions)
+    answers = options.answers.min
   }
   
   // generate some templates
@@ -106,9 +108,6 @@ async function install (context) {
     { template: '.babelrc', target: '.babelrc' },
     { template: 'tsconfig.json', target: 'tsconfig.json' },
     { template: 'tslint.json', target: 'tslint.json' },
-    { template: 'rn-cli.config.js', target: 'rn-cli.config.js' },
-    // { template: 'Tests/Setup.tsx.ejs', target: 'Tests/Setup.tsx' },
-    // { template: 'storybook/storybook.ejs', target: 'storybook/storybook.js' },
     { template: '.env.example', target: '.env.example' }
   ]
   const templateProps = {
@@ -219,8 +218,7 @@ async function install (context) {
     ignite.log(e)
     throw e
   }
-/*
-  Uncomment this if you need git configuration
+  // Comment this if you don't need git configuration
   // git configuration
   const gitExists = await filesystem.exists('./.git')
   if (!gitExists && !parameters.options['skip-git'] && system.which('git')) {
@@ -233,7 +231,6 @@ async function install (context) {
     
     spinner.succeed(`configured git`)
   }
-  */
   const perfDuration = parseInt(((new Date()).getTime() - perfStart) / 10) / 100
   spinner.succeed(`ignited ${yellow(name)} in ${perfDuration}s`)
   

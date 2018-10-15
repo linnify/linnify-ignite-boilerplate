@@ -1,47 +1,34 @@
-import * as React from "react";
-import { Text, View } from "react-native";
-import { connect } from "react-redux";
-import * as Redux from "redux";
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
+import * as Redux from 'redux';
+import { bindActionCreators } from 'redux';
 import * as Types from 'Types';
-import { Images } from "../../Themes";
+import { NavigationScreenProps } from 'react-navigation';
+import * as fromStore from '../../store';
 
-// Styles
-import styles from "./<%= props.name %>Style";
+import styles from './<%= props.name %>Style';
 
 /**
  * The properties passed to the component
  */
-export interface OwnProps {
+export interface OwnProps extends NavigationScreenProps {}
 
-}
 /**
  * The properties mapped from Redux dispatch
  */
-export interface DispatchProps {
-
-}
+export interface DispatchProps {}
 
 /**
  * The properties mapped from the global state
  */
-export interface StateProps {
-
-}
-
-/**
- * The local state
- */
-export interface State {
-
-}
+export interface StateProps {}
 
 type Props = StateProps & DispatchProps & OwnProps;
 
-class <%= props.name %> extends
-  React.Component<Props, State> {
-  public state = {
+class <%= props.name %> extends React.PureComponent<Props> {
 
-  }
+  componentWillMount() { }
 
   public render() {
     return (
@@ -52,9 +39,11 @@ class <%= props.name %> extends
   }
 }
 
-const mapDispatchToProps = (dispatch: Redux.Dispatch<Types.RootState>): DispatchProps => ({
-
-});
+const mapDispatchToProps = (dispatch: Redux.Dispatch<Types.RootAction>): DispatchProps =>
+    bindActionCreators(
+    { },
+    dispatch
+    );
 
 const mapStateToProps = (state: Types.RootState, ownProps: OwnProps): StateProps => {
   return {};
