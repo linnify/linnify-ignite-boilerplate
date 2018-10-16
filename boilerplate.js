@@ -85,6 +85,10 @@ async function install (context) {
     overwrite: true,
     matching: '!*.ejs'
   })
+  filesystem.copy(`${ignite.ignitePluginPath()}/boilerplate/assets`, `${process.cwd()}/assets`, {
+    overwrite: true,
+    matching: '!*.ejs'
+  })
   spinner.stop()
   
   // --max, --min, interactive

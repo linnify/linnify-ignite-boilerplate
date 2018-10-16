@@ -92,17 +92,17 @@ module.exports = async function (context) {
   const jobs = [
     {
       template: `${componentTemplate}.ejs`,
-      target: `App/Containers/${name}/${name}.tsx`
+      target: `src/containers/${name}/${name}.tsx`
     },
     {
       template: `${styleTemplate}.ejs`,
-      target: `App/Containers/${name}/${name}Style.ts`
+      target: `src/containers/${name}/${name}Style.ts`
     }
   ]
 
   await ignite.copyBatch(context, jobs, props)
 
-  // if using `react-navigation` go the extra step
+/*  // if using `react-navigation` go the extra step
   // and insert the screen into the nav router
   if (config.navigation === 'react-navigation') {
     const screenName = `${name}`
@@ -129,5 +129,5 @@ module.exports = async function (context) {
     })
   } else {
     print.info('List screen created, manually add it to your navigation')
-  }
+  }*/
 }

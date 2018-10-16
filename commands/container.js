@@ -21,15 +21,15 @@ module.exports = async function (context) {
   const jobs = [
     {
       template: 'container.ejs',
-      target: `App/Containers/${name}/${name}.tsx`
+      target: `src/containers/${name}/${name}.tsx`
     },
     {
       template: 'container-style.ejs',
-      target: `App/Containers/${name}/${name}Style.ts`
+      target: `src/containers/${name}/${name}Style.ts`
     },
     {
       template: 'container-index.ejs',
-      target: `App/Containers/${name}/index.ts`
+      target: `src/containers/${name}/index.ts`
     },
   ]
   

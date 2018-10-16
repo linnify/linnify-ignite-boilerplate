@@ -1,5 +1,5 @@
 import {CoreState} from '../reducers/core.reducer';
 
-export interface AppState {
+export default interface AppState {
   core: CoreState;
 }
