@@ -5,8 +5,8 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     ...ApplicationStyles.screen.mainContainer,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     ...ApplicationStyles.darkLabel,
@@ -14,6 +14,6 @@ export default StyleSheet.create({
     color: Colors.bloodOrange,
   },
   centered: {
-    alignItems: "center",
+    alignItems: 'center',
   },
 });

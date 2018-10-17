@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationStackScreenOptions } from 'react-navigation';
-import styles from './Styles/NavigationStyles';
-import { isIphone } from '../Transforms/Utils';
+import styles from '../styles/NavigationStyles';
+import { isIphone } from '../../transforms/Utils'
 
 const navigationStackScreenOptions: NavigationStackScreenOptions = {
   headerStyle: styles.header,

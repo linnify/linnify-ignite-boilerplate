@@ -5,7 +5,7 @@ import * as Redux from 'redux';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ReduxPersist from '../../config/ReduxPersist';
-import NavigationService from '../../Navigation/NavigationService';
+import NavigationService from '../../navigation/NavigationService';
 import AppNavigation from '../../navigation/AppNavigation';
 import styles from './RootContainerStyles';
 import * as fromStore from '../../store';
@@ -58,7 +58,7 @@ const mapStateToProps = (state: Types.RootState, ownProps: Props): StateProps =>
   return {}
 };
 
-const mapDispatchToProps = (dispatch: Redux.Dispatch<Types.RootState>): DispatchProps =>
+const mapDispatchToProps = (dispatch: Redux.Dispatch<Types.RootAction>): DispatchProps =>
   bindActionCreators(
     {
       launchApp: () => fromStore.coreActions.launchApp(),

@@ -1,9 +1,9 @@
 import Colors from './Colors';
 
 const type = {
-  base: "Avenir-Book",
+  base: 'Avenir-Book',
   semiBold: 'Avenir-Black',
-  bold: "Avenir-Black",
+  bold: 'Avenir-Black',
   light: 'HelveticaNeue-Italic',
 };
 

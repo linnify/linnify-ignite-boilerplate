@@ -14,7 +14,7 @@ const ApplicationStyles = {
       backgroundColor: Colors.transparent,
     } as ViewStyle,
     backgroundImage: {
-      position: "absolute",
+      position: 'absolute',
       top: 0,
       left: 0,
       bottom: 0,
@@ -34,7 +34,7 @@ const ApplicationStyles = {
       paddingVertical: Metrics.doubleBaseMargin,
       color: Colors.snow,
       marginVertical: Metrics.smallMargin,
-      textAlign: "center",
+      textAlign: 'center',
     } as TextStyle,
     subtitle: {
       color: Colors.snow,
@@ -61,9 +61,9 @@ const ApplicationStyles = {
   } as TextStyle,
   groupContainer: {
     margin: Metrics.smallMargin,
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   } as ViewStyle,
   sectionTitle: {
     ...Fonts.style.h4,
@@ -74,8 +74,8 @@ const ApplicationStyles = {
     marginHorizontal: Metrics.baseMargin,
     borderWidth: 1,
     borderColor: Colors.ember,
-    alignItems: "center",
-    textAlign: "center",
+    alignItems: 'center',
+    textAlign: 'center',
   } as TextStyle,
 };
 

@@ -2,7 +2,7 @@ import R from 'ramda';
 import * as SeamlessImmutable from 'seamless-immutable';
 
 // is this object already Immutable?
-const isImmutable = R.has("asMutable");
+const isImmutable = R.has('asMutable');
 
 // change this Immutable object into a JS object
 const convertToJs = (state: any) => state.asMutable({deep: true});
