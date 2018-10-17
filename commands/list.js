@@ -14,9 +14,10 @@ module.exports = async function (context) {
     print.info('A name is required.')
     return
   }
-
+  
   const name = pascalCase(parameters.first)
-  const props = { name }
+  const types = pascalCase(parameters.second)
+  const props = { name, types }
 
 
   // which type of layout?
@@ -58,6 +59,11 @@ module.exports = async function (context) {
     })
     dataType = dataAnswers.type
   }
+  
+  if (!types) {
+    props.types = 'any';
+  }
+  
 
   // Sorry the following is so confusing, but so are React Native lists
   // There are 3 options and therefore 8 possible combinations
@@ -92,42 +98,29 @@ module.exports = async function (context) {
   const jobs = [
     {
       template: `${componentTemplate}.ejs`,
-      target: `src/containers/${name}/${name}.tsx`
+      target: `src/components/${name}/${name}.tsx`
     },
     {
       template: `${styleTemplate}.ejs`,
-      target: `src/containers/${name}/${name}Style.ts`
-    }
+      target: `src/components/${name}/${name}Style.ts`
+    },
+    {
+      template: 'component-index.ejs',
+      target: `src/components/${name}/index.ts`
+    },
+    {
+      template: `list-item.ejs`,
+      target: `src/components/${name}Item/${name}Item.tsx`
+    },
+    {
+      template: `list-item-style.ejs`,
+      target: `src/components/${name}Item/${name}ItemStyle.ts`
+    },
+    {
+      template: 'component-index.ejs',
+      target: `src/components/${name}Item/index.ts`
+    },
   ]
 
   await ignite.copyBatch(context, jobs, props)
-
-/*  // if using `react-navigation` go the extra step
-  // and insert the screen into the nav router
-  if (config.navigation === 'react-navigation') {
-    const screenName = `${name}`
-    const appNavFilePath = `${process.cwd()}/App/Navigation/AppNavigation.tsx`
-    const importToAdd = `import { ${screenName} } from "../Containers/${screenName}";`
-    const routeToAdd = `  ${screenName}: { screen: ${screenName} },`
-
-    if (!filesystem.exists(appNavFilePath)) {
-      const msg = `No '${appNavFilePath}' file found.  Can't insert list screen.`
-      print.error(msg)
-      process.exit(1)
-    }
-
-    // insert list screen import
-    ignite.patchInFile(appNavFilePath, {
-      after: patterns[patterns.constants.PATTERN_IMPORTS],
-      insert: importToAdd
-    })
-
-    // insert list screen route
-    ignite.patchInFile(appNavFilePath, {
-      after: patterns[patterns.constants.PATTERN_ROUTES],
-      insert: routeToAdd
-    })
-  } else {
-    print.info('List screen created, manually add it to your navigation')
-  }*/
 }
