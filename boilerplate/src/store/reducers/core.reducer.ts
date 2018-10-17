@@ -1,4 +1,4 @@
-import { ActionType } from "typesafe-actions";
+import { ActionType } from 'typesafe-actions';
 import * as coreActions from '../actions/core/types';
 
 export interface CoreState {

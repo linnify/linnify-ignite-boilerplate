@@ -1,4 +1,4 @@
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 import * as Types from 'Types';
 import * as coreActions from './types';
 

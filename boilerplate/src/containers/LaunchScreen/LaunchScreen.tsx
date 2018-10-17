@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Image, Text, View } from "react-native";
+import React, { Component } from 'react';
+import { Image, Text, View } from 'react-native';
 
 // Styles
-import styles from "./LaunchScreenStyles";
+import styles from './LaunchScreenStyles';
 
 export default class LaunchScreen extends Component {
   public render() {

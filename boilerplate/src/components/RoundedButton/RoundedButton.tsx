@@ -1,6 +1,6 @@
-import * as React from "react";
-import { Text, TouchableOpacity } from "react-native";
-import styles from "./RoundedButtonStyles";
+import * as React from 'react';
+import { Text, TouchableOpacity } from 'react-native';
+import styles from './RoundedButtonStyles';
 
 // Note that this file (App/Components/RoundedButton) needs to be
 // imported in your app somewhere, otherwise your component won't be

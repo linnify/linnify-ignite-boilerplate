@@ -1,6 +1,6 @@
-import { Text } from "react-native";
-import AppConfig from "./AppConfig";
-import DebugConfig from "./DebugConfig";
+import { Text } from 'react-native';
+import AppConfig from './AppConfig';
+import DebugConfig from './DebugConfig';
 
 
 Text.allowFontScaling = AppConfig.allowTextFontScaling;

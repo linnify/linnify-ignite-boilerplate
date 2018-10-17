@@ -1,8 +1,8 @@
-import { TextStyle, ViewStyle } from "react-native";
+import { TextStyle, ViewStyle } from 'react-native';
 
-import Colors from "./Colors";
-import Fonts from "./Fonts";
-import Metrics from "./Metrics";
+import Colors from './Colors';
+import Fonts from './Fonts';
+import Metrics from './Metrics';
 
 // This file is for a reusable grouping of Theme items.
 // Similar to an XML fragment layout in Android

@@ -1,13 +1,13 @@
-import * as React from "react";
-import { View, StatusBar } from "react-native";
-import * as Types from "Types";
+import * as React from 'react';
+import { View, StatusBar } from 'react-native';
+import * as Types from 'Types';
 import * as Redux from 'redux';
 import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
-import ReduxPersist from "../../config/ReduxPersist";
+import { connect } from 'react-redux';
+import ReduxPersist from '../../config/ReduxPersist';
 import NavigationService from '../../Navigation/NavigationService';
-import AppNavigation from "../../navigation/AppNavigation";
-import styles from "./RootContainerStyles";
+import AppNavigation from '../../navigation/AppNavigation';
+import styles from './RootContainerStyles';
 import * as fromStore from '../../store';
 
 /**

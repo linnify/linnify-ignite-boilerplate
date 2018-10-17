@@ -1,7 +1,7 @@
-import { StyleSheet } from "react-native";
-import Colors from "../../themes/Colors";
-import Fonts from "../../themes/Fonts";
-import Metrics from "../../themes/Metrics";
+import { StyleSheet } from 'react-native';
+import Colors from '../../themes/Colors';
+import Fonts from '../../themes/Fonts';
+import Metrics from '../../themes/Metrics';
 
 export default StyleSheet.create({
   button: {

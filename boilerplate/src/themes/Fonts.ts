@@ -1,4 +1,4 @@
-import Colors from "./Colors";
+import Colors from './Colors';
 
 const type = {
   base: "Avenir-Book",
