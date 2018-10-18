@@ -62,6 +62,26 @@ Your primary navigation components.
 - `AppNavigation.tsx`
 - `NavigationService.ts`
 
+#### Services
+
+Your API services.
+
+
+#### Store
+
+You have some folders here based on Redux architecture: 
+ 
+- `actions` 
+- `middlewares`
+- `reducers`
+- `selectors`
+- `state`
+
+#### Credits
+
+Created by Linnify team based on Ignite IR Boilerplate, by Infinite Red.
+
+
 
 
 
