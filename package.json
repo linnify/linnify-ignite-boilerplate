@@ -1,7 +1,7 @@
 {
   "name": "ignite-linnify-boilerplate",
   "description": "Ignite Typescript boilerplate used by Linnify Agency",
-  "version": "2.0.0",
+  "version": "0.0.4",
   "license": "MIT",
   "author": {
     "name": "Razvan Bretoiu",
