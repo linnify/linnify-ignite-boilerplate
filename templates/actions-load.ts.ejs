@@ -1,0 +1,21 @@
+import { Dispatch } from 'redux';
+import * as Types from '../../state/'
+import * as <%=props.camelName%>Actions from './types'
+import * as service from '../../../services/<%=props.camelName%>.service'
+
+export const load<%=props.pascalName%> = () => {
+  return async (
+    dispatch: Dispatch<Types.RootAction>,
+    getState: () => Types.RootState
+  ) => {
+    dispatch(<%=props.camelName%>Actions.Load<%=props.pascalName%>())
+    try {
+      const response = await service.list();
+      dispatch(<%=props.camelName%>Actions.Load<%=props.pascalName%>Success(response))
+    } catch (e) {
+      dispatch(<%=props.camelName%>Actions.Load<%=props.pascalName%>Error(e.message))
+    }
+  }
+}
+
+

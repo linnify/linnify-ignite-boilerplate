@@ -1,0 +1,15 @@
+import { Dispatch } from 'redux';
+import * as Types from '../../state/'
+import * as <%=props.camelName%>Actions from './types'
+import { <%=props.pascalName%> } from "../../../types/classes"
+import * as <%=props.camelName%>sService from '../../../services/<%=props.camelName%>s.service'
+
+
+export const add<%=props.pascalName%> = (<%=props.camelName%>: <%=props.pascalName%>) => {
+  return async (
+    dispatch: Dispatch<Types.RootAction>
+  ) => {
+    const <%=props.camelName%>ToAdd = await <%=props.camelName%>sService.create(<%=props.camelName%>);
+    dispatch(<%=props.camelName%>Actions.Add<%=props.pascalName%>(<%=props.camelName%>ToAdd))
+  }
+}

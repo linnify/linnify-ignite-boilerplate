@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import * as Types from 'Types';
+import * as Types from "../../state"
 import * as coreActions from './types';
 
 export const setSettings = () => {

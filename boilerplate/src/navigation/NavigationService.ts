@@ -1,8 +1,6 @@
 import {
   NavigationActions,
   NavigationParams,
-  NavigationRoute,
-  StackActions,
 } from 'react-navigation';
 
 class NavigationService {

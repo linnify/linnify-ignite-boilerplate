@@ -1,0 +1,60 @@
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
+import * as Redux from 'redux';
+import { bindActionCreators } from 'redux';
+import * as Types from '../../store/state';
+import * as fromStore from '../../store';
+
+import styles from './<%= props.name %>Style';
+
+/**
+ * The properties passed to the component
+ */
+export interface OwnProps {}
+
+/**
+ * The properties mapped from Redux dispatch
+ */
+export interface DispatchProps {}
+
+/**
+ * The properties mapped from the global state
+ */
+export interface StateProps {}
+
+type Props = StateProps & DispatchProps & OwnProps;
+
+class <%= props.name %> extends React.PureComponent <Props> {
+  constructor(props:Props){
+  super(props)
+  }
+  componentDidMount() { }
+
+  public render() {
+    return (
+      <View style={styles.container}>
+        <Text>Hello <%= props.name %></Text>
+      </View>
+    );
+  }
+}
+
+
+const mapStateToProps = (
+    state: Types.RootState,
+    ownProps: Props
+): StateProps =>{
+  return{}
+}
+
+const mapDispatchToProps = (
+  dispatch: Redux.Dispatch<Types.RootAction>
+): DispatchProps =>
+  bindActionCreators(
+    { },
+    dispatch
+  );
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(<%= props.name %>)

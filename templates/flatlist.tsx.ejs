@@ -1,0 +1,73 @@
+import * as React from 'react';
+import { View, Text, FlatList } from 'react-native';
+import <%= props.name %>ListItem from '../<%= props.name %>ListItem/<%= props.name %>ListItem';
+import styles from './<%= props.name %>ListStyle';
+
+
+interface Props {
+  data: any[];
+}
+
+class <%= props.name %>List extends React.Component<Props> {
+  constructor(props:Props){
+    super(props);
+  }
+
+  renderItem = ({item}: {item: any }) => {
+    return <<%= props.name %>ListItem item={item}/>
+  };
+
+  renderHeaderComponent = () => {
+    return (
+      <View>
+        <Text> - Header - </Text>
+      </View>
+    )
+  };
+
+  renderFooterComponent = () => {
+    return (
+      <View>
+        <Text> - Footer - </Text>
+      </View>
+      );
+    };
+
+  renderEmpty = () => {
+    return (
+      <View>
+        <Text> - Empty - </Text>
+      </View>
+      );
+    };
+
+  renderItemSeparator = () => {
+    return (
+      <View>
+        <Text> - Separator - </Text>
+      </View>
+    );
+  };
+
+  keyExtractor = (item: any, index: number) => {
+    //DO NOT USE ANY
+    return index.toString();
+  };
+
+  render () {
+    return (
+      <FlatList
+        contentContainerStyle={styles.listContent}
+        data={this.props.data}
+        renderItem={this.renderItem}
+        keyExtractor={this.keyExtractor}
+        ListHeaderComponent={this.renderHeaderComponent}
+        ListFooterComponent={this.renderFooterComponent}
+        ListEmptyComponent={this.renderEmpty}
+        ItemSeparatorComponent={this.renderItemSeparator}
+      />
+      )
+    }
+}
+
+export default <%= props.name %>List

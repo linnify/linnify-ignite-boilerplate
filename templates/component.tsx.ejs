@@ -1,0 +1,17 @@
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import styles from './<%= props.name %>Style';
+
+export interface Props {
+}
+
+const <%= props.name %> = (props: Props) =>  {
+
+return (
+    <View style={styles.container}>
+      <Text><%= props.name %> Component</Text>
+    </View>
+)
+};
+
+export default <%= props.name %>;
