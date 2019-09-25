@@ -1,10 +1,10 @@
 {
-  "name": "@linnify/ignite-boilerplate",
+  "name": "ignite-linnify",
   "description": "Linnify's hot boilerplate for React Native.",
   "license": "MIT",
   "repository": "https://github.com/linnify/linnify-ignite-boilerplate",
   "homepage": "https://github.com/linnify/linnify-ignite-boilerplate",
-  "version": "1.0.0",
+  "version": "4.7.0",
   "files": [
     "boilerplate",
     "commands",
@@ -12,12 +12,13 @@
     "templates",
     "boilerplate.js",
     "plugin.js",
-    "README.md",
+    "readme.md",
     "vanilla"
   ],
   "author": {
     "name": "Linnify",
-    "email": "contact@linnify.com"
+    "email": "contact@linnify.com",
+    "url": "https://github.com/linnify/linnify-ignite-boilerplate"
   },
   "scripts": {
     "format": "npm-run-all format:*",
@@ -29,6 +30,7 @@
     "test": "jest --runInBand",
     "watch": "jest --runInBand --watch",
     "coverage": "jest --runInBand --coverage",
+    "ci:test": "yarn test",
     "ci:publish": "yarn semantic-release",
     "semantic-release": "semantic-release"
   },
@@ -56,6 +58,21 @@
     "singleQuote": false,
     "trailingComma": "all"
   },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": "package.json",
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
   "devDependencies": {
     "@semantic-release/git": "^7.0.5",
     "babel-eslint": "^10.0.1",
@@ -76,7 +93,8 @@
     "tempy": "^0.3.0"
   },
   "dependencies": {
-    "ramda": "^0.26.1"
+    "ramda": "^0.26.1",
+    "read-pkg-up": "^6.0.0"
   },
   "jest": {
     "testPathIgnorePatterns": [
