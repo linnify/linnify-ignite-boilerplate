@@ -1,0 +1,28 @@
+import { Dispatch } from 'redux';
+import * as Types from '../../state/'
+import * as <%=props.camelName%>Actions from './types'
+import * as <%=props.camelName%>Service from '../../../services/<%=props.camelName%>.service'
+import { <%=props.singularPascalName%>, QueryParams } from "../../../types/classes"
+import { ResponseParams } from "../../../types/interfaces"
+
+
+export const load<%=props.pascalName%> = () => {
+  return async (
+    dispatch: Dispatch<Types.RootAction>,
+    getState: () => Types.RootState
+  ) => {
+    const next = getState().<%=props.camelName%>.next;
+    const loading = getState().<%=props.camelName%>.loading;
+    const queryParams: QueryParams = { ...getState().<%=props.camelName%>.pagination };
+
+    if (!next || loading) {
+      return;
+    }
+
+    dispatch(<%=props.camelName%>Actions.Load<%=props.pascalName%>())
+    const response: ResponseParams<<%=props.singularPascalName%>> = await <%=props.camelName%>Service.list(queryParams);
+    dispatch(<%=props.camelName%>Actions.Load<%=props.pascalName%>Success(response))
+    dispatch(<%=props.camelName%>Actions.IncrementPage())
+  }
+}
+

@@ -1,54 +1,195 @@
-#  ReactNativeLinnify
 
-* TypeScript React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
-
-## :arrow_up: How to Setup
-
-**Step 1:** git clone this repo:
-
-**Step 2:** cd to the cloned repo:
-
-**Step 3:** Install the Application with `yarn` or `npm i`
+# Ignite Linnify Boilerplate 
 
 
-## :arrow_forward: How to Run App
+Once you've installed [React Native](https://shift.infinite.red/painless-react-native-setup-for-mac-windows-linux-956c23d2abf9) and the [Ignite CLI](https://github.com/infinitered/ignite), you can get started with this boilerplate.
 
-1. cd to the repo
-2. Run `npm run compile`
-3. Run Build for either OS
-  * for iOS
-    * run `react-native run-ios`
-  * for Android
-    * Run Genymotion
-    * run `react-native run-android`
+Includes:
 
-**To Lint on Commit**
+- React Native
+- React Navigation
+- React Redux
+- TypeScript
+- And more!
 
-This is implemented using [husky](https://github.com/typicode/husky). There is no additional setup needed.
+## Quick Start
 
-## :closed_lock_with_key: Secrets
-
-This project uses [react-native-config](https://github.com/luggit/react-native-config) to expose config variables to your javascript code in React Native. You can store API keys
-and other sensitive information in a `.env` file:
+First, install Ignite CLI:
 
 ```
-API_URL=https://myapi.com
-GOOGLE_MAPS_API_KEY=abcdefgh
+$ yarn global add ignite-cli
 ```
 
-and access them from React Native like so:
+Then spin up a new Linnify-powered React Native app:
 
 ```
-import Secrets from 'react-native-config'
-
-Secrets.API_URL  // 'https://myapi.com'
-Secrets.GOOGLE_MAPS_API_KEY  // 'abcdefgh'
+$ ignite new MyApp -b ignite-linnify
 ```
 
-The `.env` file is ignored by git keeping those secrets out of your repo.
+`cd` into your new app and run `react-native run-ios` or `react-native run-android` (note: in Android you'll need an Android emulator running or an Android phone attached).
 
-### Get started:
-1. Copy .env.example to .env
-2. Add your config variables
-3. Follow instructions at [https://github.com/luggit/react-native-config#setup](https://github.com/luggit/react-native-config#setup)
-4. Done!
+## Explanation of folder structure
+
+The Ignite Linnify boilerplate project's structure will look similar to this:
+
+```
+ignite-project
+├── src
+│   ├── components
+│   ├── config
+│   ├── containers
+│   ├── images
+│   ├── navigation
+│   ├── services
+│   ├── store
+│   ├── themes
+│   ├── transforms
+│   └── types
+├── README.md
+├── android
+├── ignite
+│   ├── ignite.json
+│   └── plugins
+├── index.js
+├── ios
+├── tslint.json
+├── tsconfig.json
+└── package.json
+```
+
+### ./src directory
+
+Included in an Ignite boilerplate project is the `src` directory. This is a directory you would normally have to create when using vanilla React Native.
+
+The inside of the `src` directory looks similar to the following:
+
+```
+src
+├── components
+├── config
+├── containers
+├── images
+├── navigation
+├── services
+├── store
+├── themes
+├── transforms
+└── types
+```
+
+### components
+This is where your React components will live. Each component will have a directory containing the `.tsx` file, the `style` file and `index.ts`.
+
+### containers
+This is where your screen containers will live. A screen is a React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files. The app contains by default RootContainer and a LaunchScreen.
+
+### navigation
+This is where your `react-navigation` navigators will live.
+
+### services
+Any services that interface with the outside world will live here (think REST APIs, Push Notifications, etc.).
+
+### themes
+Here lives the theme for your application, including spacing, colors, and typography, etc. The app contains some of them by default.
+
+### transforms
+This is a great place to put miscellaneous helpers and utilities. Things like date helpers, formatters, etc. are often found here. However, it should only be used for things that are truly shared across your application. If a helper or utility is only used by a specific component or model, consider co-locating your helper with that component or model.
+
+### types
+This is where your classes and interfaces will live
+
+## Others
+### ./ignite directory
+
+The `ignite` directory stores all things Ignite, including CLI and boilerplate items. Here you will find generators, plugins and examples to help you get started with React Native.
+
+# Generators
+## Basics
+### Containers
+This will generate in src/container the following:
+```
+name
+├── name.tsx
+├── nameStyle.tsx
+└── index.ts
+```
+Call using:
+```
+ignite generate container name
+```
+#
+### Components
+This will generate in src/components the following:
+```
+name
+├── name.tsx
+├── nameStyle.tsx
+└── index.ts
+```
+Call using the following command. Will be asked to chose between pure or stateless component. Please match the case
+```
+ignite generate component name
+```
+#
+### Lists
+This will generate in src/components the following:
+```
+NameList
+├── NameList.tsx
+├── NameListStyle.tsx
+└── index.ts
+NameListItem
+├── NameListItem.tsx
+├── NameListItemStyle.tsx
+└── index.ts
+
+```
+Call using the following command. Please use small case for the name as it will be automatically transformed.
+```
+ignite generate component name
+```
+# 
+## Redux
+For every generator all the related files will be updated.
+### Store
+This will generate a store with all the files for a given name. Please use plural and small case.
+```
+ignite generate store-basic name
+```
+#
+### Service
+This will generate a service file with CRUD operations and a class with the given name. Please use plural and small case.
+```
+ignite generate service name
+```
+If you want to use pagination you should use:
+```
+ignite generate service-pagination name
+```
+#
+### Selector
+This will add files to the selector. Please use singular and small case.
+```
+ignite generate selector name
+```
+#
+### Actions
+#### 1.Load Actions
+Will create/update all the files needed for a load action. Please use plural and small case.
+```
+ignite generate action-load name
+```
+If you want to use pagination you should use:
+```
+ignite generate action-load-pagination name
+```
+#### 2. Add Action
+Will create/update all the files needed for an add action. Please use singular and small case.
+```
+ignite generate action-add name
+```
+#### 3. Delete Action
+Will create/update all the files needed for a delete action. Please use singular and small case.
+```
+ignite generate action-delete name
+```

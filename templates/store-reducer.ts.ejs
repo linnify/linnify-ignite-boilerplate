@@ -1,0 +1,21 @@
+import { ActionType, getType } from 'typesafe-actions'
+import * as <%= props.name %>Actions from '../actions/<%= props.name %>/types'
+import * as _ from 'lodash'
+
+
+export interface <%= props.pascalName%>State {
+}
+
+const initialState: <%= props.pascalName %>State = {
+};
+
+export type <%= props.pascalName %>Actions = ActionType<typeof <%= props.camelName %>Actions>
+
+const <%= props.name %>Reducer = (state = initialState, action: <%= props.pascalName %>Actions) => {
+    switch (action.type) {
+        default:
+            return state
+    }
+};
+
+export default <%= props.camelName %>Reducer

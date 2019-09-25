@@ -1,17 +1,18 @@
 import { StyleSheet } from 'react-native';
-import { ApplicationStyles, Metrics, Colors } from '../../themes/index';
+import { ApplicationStyles } from '../../themes';
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     ...ApplicationStyles.screen.mainContainer,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
   title: {
     ...ApplicationStyles.darkLabel,
     fontSize: 20,
-    color: Colors.bloodOrange,
+    color: '#003A40',
+    marginTop:100,
   },
   centered: {
     alignItems: 'center',

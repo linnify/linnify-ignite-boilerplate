@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, Text } from 'react-native';
 import * as Types from 'Types';
 import * as Redux from 'redux';
 import { bindActionCreators } from 'redux';

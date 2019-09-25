@@ -1,0 +1,23 @@
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import styles from './<%= props.name %>ListItemStyle';
+
+interface Props {
+  item:any
+}
+
+class <%= props.name %>ListItem extends React.PureComponent<Props> {
+  constructor(props:Props){
+    super(props);
+  }
+
+
+  public render() {
+    return (
+      <View style={styles.container}>
+        <Text>Pure Component</Text>
+      </View>
+    );
+  }
+}
+export default <%= props.name %>ListItem;

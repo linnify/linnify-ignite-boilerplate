@@ -1,0 +1,28 @@
+import Api from '../services/api'
+import { <%=props.singularPascalName%> } from '../types/classes'
+
+const resource = ''
+
+export const list = (): Promise<<%=props.singularPascalName%>[]> => {
+    return Api.get<<%=props.singularPascalName%>[]>(resource);
+}
+
+export const get = (id: number): Promise<<%=props.singularPascalName%>> => {
+    const url = `${resource}/${id}`
+    return Api.get<<%=props.singularPascalName%>>(url);
+}
+export const create = (<%=props.singularCamelName%>: <%=props.singularPascalName%>): Promise<<%=props.singularPascalName%>> => {
+    return Api.post<<%=props.singularPascalName%>>(resource, <%=props.singularCamelName%>);
+}
+
+export const remove = (id: number): Promise<void> => {
+    const url = `${resource}/${id}`
+    return Api.delete(url);
+}
+
+export const update = (<%=props.singularCamelName%>: <%=props.singularPascalName%>): Promise<<%=props.singularPascalName%>> => {
+    const url = `${resource}/${<%=props.singularCamelName%>.id}`
+    return Api.put<<%=props.singularPascalName%>>(url, <%=props.singularCamelName%>);
+}
+
+

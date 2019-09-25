@@ -1,36 +1,87 @@
 {
-  "name": "ignite-linnify-boilerplate",
-  "description": "Ignite Typescript boilerplate used by Linnify Agency",
-  "version": "1.0.0",
+  "name": "@linnify/ignite-boilerplate",
+  "description": "Linnify's hot boilerplate for React Native.",
   "license": "MIT",
+  "repository": "https://github.com/linnify/linnify-ignite-boilerplate",
+  "homepage": "https://github.com/linnify/linnify-ignite-boilerplate",
+  "version": "1.0.0",
+  "files": [
+    "boilerplate",
+    "commands",
+    "lib",
+    "templates",
+    "boilerplate.js",
+    "plugin.js",
+    "README.md",
+    "vanilla"
+  ],
   "author": {
-    "name": "Razvan Bretoiu",
-    "email": "razvanbretoiu@linnify.com",
-    "url": "https://www.linnify.com"
+    "name": "Linnify",
+    "email": "contact@linnify.com"
   },
   "scripts": {
-    "lint": "standard",
-    "test": "ava",
-    "watch": "ava --watch",
-    "coverage": "nyc ava",
-    "shipit": "np"
+    "format": "npm-run-all format:*",
+    "format:js": "prettier --write {.,**}/*.js",
+    "format:json": "prettier --write {.,**}/*.json",
+    "format:md": "prettier --write {.,**}/*.md",
+    "format:ts": "prettier --write {.,**}/*.{ts,tsx}",
+    "lint": "eslint commands lib test *.js --fix",
+    "test": "jest --runInBand",
+    "watch": "jest --runInBand --watch",
+    "coverage": "jest --runInBand --coverage",
+    "ci:publish": "yarn semantic-release",
+    "semantic-release": "semantic-release"
   },
-  "standard": {
-    "parser": "babel-eslint"
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "prettier"
+    ],
+    "globals": {
+      "__DEV__": false,
+      "jasmine": false,
+      "beforeAll": false,
+      "afterAll": false,
+      "beforeEach": false,
+      "test": false,
+      "expect": false,
+      "describe": false,
+      "jest": false,
+      "it": false
+    }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/razvanbretoiu/ignite-linnify-boilerplate.git"
-  },
-  "dependencies": {
-    "ramda": "^0.23.0"
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": false,
+    "trailingComma": "all"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
-    "babel-eslint": "^7.1.1",
-    "np": "^2.12.0",
-    "nyc": "^10.1.2",
-    "sinon": "^1.17.7",
-    "standard": "^8.6.0"
+    "@semantic-release/git": "^7.0.5",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "fs-jetpack": "^2.2.2",
+    "jest": "^24.8.0",
+    "np": "^3.0.4",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.18.2",
+    "semantic-release": "^15.12.3",
+    "sinon": "^7.3.2",
+    "tempy": "^0.3.0"
+  },
+  "dependencies": {
+    "ramda": "^0.26.1"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules",
+      "/boilerplate"
+    ]
   }
 }
