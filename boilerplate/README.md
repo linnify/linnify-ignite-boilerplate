@@ -23,7 +23,7 @@ $ yarn global add ignite-cli
 Then spin up a new Linnify-powered React Native app:
 
 ```
-$ ignite new MyApp -b ignite-linnify
+$ ignite new MyApp -b ignite-boilerplate-linnify
 ```
 
 `cd` into your new app and run `react-native run-ios` or `react-native run-android` (note: in Android you'll need an Android emulator running or an Android phone attached).
