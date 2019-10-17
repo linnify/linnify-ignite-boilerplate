@@ -7,7 +7,7 @@ import Api from '../services/api';
 
 // create our store
 const store = createStore();
-Api.initialize();
+Api.getInstance();
 
 class App extends React.Component {
   public render() {
