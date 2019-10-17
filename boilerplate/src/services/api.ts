@@ -4,19 +4,20 @@ import Config from 'react-native-config';
 class Api {
   private static api: ApisauceInstance;
 
-  public static initialize() {
-    const url = Config.API_URL;
-    Api.initializeWithUrl(url);
-  }
+  public static getInstance() {
+    if (!Api.api) {
+      const url = 'http://localhost:8000';
+      Api.initializeWithUrl(url);
+    }
 
   private static initializeWithUrl(url: string) {
-    Api.api = create({
-      baseURL: url,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
-  }
+      Api.api = create({
+        baseURL: url,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+    }
 
   public static setAuthorizationHeader(token: string) {
     Api.api.setHeader('Authorization', token);
